@@ -83,6 +83,10 @@ a:not([href]):not([tabindex]) {
   color: #fff;
 }
 
+.btn.disabled, .btn:disabled {
+  opacity: 1;
+}
+
 .btn-common {
   background-color: #30683A;
   position: relative;
@@ -161,8 +165,7 @@ button:focus {
 }
 
 .navbar-expand-md .navbar-nav .nav-item {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 25px;
 }
 
 .navbar-expand-md .navbar-nav .nav-link {
@@ -274,6 +277,92 @@ button:focus {
   border: 1px solid rgba(48, 104, 58, 0.6);
 }
 
+/* ScrollToTop */
+a.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 18px;
+  right: 15px;
+  text-decoration: none;
+}
+
+a.back-to-top i {
+  display: block;
+  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  background: #30683A;
+  border-radius: 30px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+}
+
+a.back-to-top:hover, a.back-to-top:focus {
+  text-decoration: none;
+}
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ecdbcd;
+  z-index: 9999999;
+}
+
+.loader {
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+#loader-1:before, #loader-1:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 7px solid transparent;
+  border-top-color: #30683A;
+}
+
+#loader-1:before {
+  z-index: 100;
+  animation: spin 1s infinite;
+}
+
+#loader-1:after {
+  border: 7px solid #e1c7b1;
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 /* ==========================================================================
  Intro Area
 ========================================================================== */
@@ -296,6 +385,15 @@ button:focus {
   margin-bottom: 10px;
 }
 
+#intro .contents .header-button {
+  margin-top: 20px;
+  color: #222222;
+}
+
+#intro .contents .header-button .btn {
+  margin-right: 10px;
+}
+
 .intro {
   background-color: #ecdbcd;
 }
@@ -309,20 +407,20 @@ button:focus {
 }
 
 /* ==========================================================================
- Blog Area
+Portfolio Area
 ========================================================================== */
 
-.blog {
-  background-color: #ecdbcd
+#portfolio {
+  position: relative;
 }
 
-/* ==========================================================================
- Portfolio Area
-========================================================================== */
-
 .portfolio-item {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: 169px;
   border-radius: 4px;
-  text-align: center;
+  overflow: hidden;
   padding: 8px;
   box-shadow: 0 0 12px #f4f4f4;
   cursor: pointer;
@@ -337,16 +435,25 @@ button:focus {
   box-shadow: 0 10px 22px 10px rgba(27, 38, 49, 0.25);
 }
 
-.portfolio-item-video {
-  height: 100%;
-  width: 100%;
-  pointer-events: none;
-  display: flex;
-  justify-content: center;
+.portfolio-item img {
+  object-fit: cover;
 }
 
-#portfolio {
-  position: relative;
+/* ==========================================================================
+ Blog Area
+========================================================================== */
+
+.blog {
+  background-color: #ecdbcd
+}
+
+/* ==========================================================================
+ Contact Area
+========================================================================== */
+
+.contact-form-area h2 {
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
 /* ==========================================================================
@@ -380,14 +487,14 @@ button:focus {
   margin-bottom: 10px;
 }
 
-.footer-area .address li a {
+.footer-area .address li p {
   color: #666666;
   font-size: 14px;
   line-height: 30px;
   font-weight: 400;
 }
 
-.footer-area .address li a i {
+.footer-area .address li p i {
   font-size: 22px;
   width: 32px;
   vertical-align: middle;
@@ -438,6 +545,14 @@ button:focus {
 
 .social-icon a:hover {
   color: #fff !important;
+}
+
+.social-icon .vimeo:hover {
+  background: #1ab7ea;
+}
+
+.social-icon .youtube:hover {
+  background: #ff0000;
 }
 
 .social-icon .facebook:hover {
