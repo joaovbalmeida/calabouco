@@ -121,7 +121,13 @@
                     <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
                 </div>
                 <div class="row">
-
+                    <div class="col-auto mx-auto mt-3">
+                        <!-- SnapWidget -->
+                        <iframe src="https://snapwidget.com/embed/660911" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:525px; height:600px"></iframe>
+                    </div>
+                    <div class="col-auto mx-auto my-3">
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCalaboucoFilmes%2F&tabs=timeline%2C%20events%2C%20messages&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=578894232574713" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                    </div>
                 </div>
             </div>
         </section>
@@ -151,12 +157,31 @@
                     <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-7 col-md-12 col-sm-12 my-3 wow fadeInLeft" data-wow-delay="0.3s">
-                        </br><a rel="nofollow" href="https://rebrand.ly/fusion-ud" class="btn btn-common">Enviar</a>
+                    <div class="col-lg-7 col-md-12 col-sm-12 my-3 wow fadeInLeft contact-container" data-wow-delay="0.3s">
+                            <form action="{% url 'home' %}" method="POST">
+                                {% csrf_token %}
+                                <div class="half-form_container">
+                                    {{ form.name }}
+                                    {{ form.phone }}
+                                </div>
+                                {{ form.email }}
+                                {{ form.message }}
+                                <button class="btn btn-common mb-3">Enviar</button><br>
+                                {% if form.errors %}
+                                    {% for error, value in form.errors.items %}
+                                        <span style="color:red;" class="mb-3"><span style="text-transform:capitalize;">{{ error }}</span>: {{ value.as_text }}</span><br>
+                                    {% endfor %}
+                                {% endif %}
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <span class="mb-3">{{ message }}</span>
+                                    {% endfor %}
+                                {% endif %}
+                            </form>
                     </div>
                     <div class="col-lg-5 col-md-12 col-xs-12 my-3 wow fadeInRight" data-wow-delay="0.3s">
                         <div class="map">
-                        <object style="border:0; height: 280px; width: 100%;" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34015.943594576835!2d-106.43242624069771!3d31.677719472407432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e75d90e99d597b%3A0x6cd3eb9a9fcd23f1!2sCourtyard+by+Marriott+Ciudad+Juarez!5e0!3m2!1sen!2sbd!4v1533791187584"></object>
+                            <object style="border:0; height: 280px; width: 100%;" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34015.943594576835!2d-106.43242624069771!3d31.677719472407432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e75d90e99d597b%3A0x6cd3eb9a9fcd23f1!2sCourtyard+by+Marriott+Ciudad+Juarez!5e0!3m2!1sen!2sbd!4v1533791187584"></object>
                         </div>
                     </div>
                 </div>
@@ -220,7 +245,7 @@
             <div class="loader" id="loader-1"></div>
         </div>
         <!-- End Preloader -->
-
+        <script src="https://snapwidget.com/js/snapwidget.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
