@@ -16,6 +16,7 @@ class HomeView(View):
         context = {}
         context['stills'] = Still.objects.all()
         context['clients'] = Client.objects.all()
+        context['form'] = ContactForm()
         return TemplateResponse(request, 'home.html', context)
 
     def post(self, request):
