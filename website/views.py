@@ -33,7 +33,7 @@ class HomeView(View):
                         form.cleaned_data['message'],
                     ),
                     'calaboucofilmes@gmail.com',
-                    ['joaovbalmeida@gmail.com']
+                    ['calaboucofilmes@gmail.com']
                 )
                 return HttpResponseRedirect(reverse('home'))
         except Exception as e:
