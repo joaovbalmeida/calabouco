@@ -26,17 +26,17 @@ class HomeView(View):
                 messages.add_message(request, messages.INFO, 'Obrigado pelo contato!')
                 send_mail(
                     'Contato Site Calabouço',
-                    'Nome: %s, Email: %s, Telefone: %s, Mensagem: %s' % (
-                        form.cleaned_data['nome'],
+                    'Nome: %s,\nEmail: %s,\nTelefone: %s,\nMensagem: %s' % (
+                        form.cleaned_data['name'],
                         form.cleaned_data['email'],
-                        form.cleaned_data['telefone'],
-                        form.cleaned_data['mensagem'],
+                        form.cleaned_data['phone'],
+                        form.cleaned_data['message'],
                     ),
-                    settings.EMAIL_HOST_USER,
+                    'calaboucofilmes@gmail.com',
                     ['joaovbalmeida@gmail.com']
                 )
                 return HttpResponseRedirect(reverse('home'))
         except Exception as e:
-            messages.add_message(request, messages.INFO, 'Não conseguimos enviar a mensagem, por favor tente novamente.')
+            messages.add_message(request, messages.INFO, e)
         context['form'] = form
         return TemplateResponse(request, 'home.html', context)

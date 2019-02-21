@@ -158,25 +158,33 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-7 col-md-12 col-sm-12 my-3 wow fadeInLeft contact-container" data-wow-delay="0.3s">
-                            <form action="{% url 'home' %}" method="POST">
+                            <form action="{% url 'home' %}" method="post">
                                 {% csrf_token %}
-                                <div class="half-form_container">
-                                    {{ form.name }}
-                                    {{ form.phone }}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        {{ form.name }}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{ form.phone }}
+                                    </div>
+                                    <div class="col-md-12">
+                                        {{ form.email }}
+                                    </div>
+                                    <div class="col-md-12">
+                                        {{ form.message }}
+                                        <button class="btn btn-common mb-3">Enviar</button><br>
+                                        {% if form.errors %}
+                                            {% for error, value in form.errors.items %}
+                                                <span style="color:red;" class="mb-3"><span style="text-transform:capitalize;">{{ error }}</span>: {{ value.as_text }}</span><br>
+                                            {% endfor %}
+                                        {% endif %}
+                                        {% if messages %}
+                                            {% for message in messages %}
+                                                <span class="mb-3">{{ message }}</span>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
                                 </div>
-                                {{ form.email }}
-                                {{ form.message }}
-                                <button class="btn btn-common mb-3">Enviar</button><br>
-                                {% if form.errors %}
-                                    {% for error, value in form.errors.items %}
-                                        <span style="color:red;" class="mb-3"><span style="text-transform:capitalize;">{{ error }}</span>: {{ value.as_text }}</span><br>
-                                    {% endfor %}
-                                {% endif %}
-                                {% if messages %}
-                                    {% for message in messages %}
-                                        <span class="mb-3">{{ message }}</span>
-                                    {% endfor %}
-                                {% endif %}
                             </form>
                     </div>
                     <div class="col-lg-5 col-md-12 col-xs-12 my-3 wow fadeInRight" data-wow-delay="0.3s">

@@ -1,15 +1,15 @@
 from django import forms
- 
+
 class ContactForm(forms.Form):
-    nome = forms.CharField(label='Nome', max_length=100, widget=forms.TextInput(
-        attrs={'class': 'half-form', 'placeholder': 'Nome'}
+    name = forms.CharField(label='Nome', max_length=100, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': 'Nome'}
     ))
-    telefone = forms.RegexField(r'\([0-9]{2}\) [0-9]{5}-[0-9]{3,4}_?', label='Telefone', max_length=100, widget=forms.TextInput(
-        attrs={'class': 'half-form telephone-number', 'placeholder': 'Telefone'}
+    phone = forms.RegexField(r'^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$', label='Telefone', max_length=100, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': '(XX) XXXXX-XXXX'}
     ))
     email = forms.EmailField(label='Email', max_length=100, widget=forms.TextInput(
-        attrs={'placeholder': 'Email'}
+        attrs={'class': 'form-control', 'placeholder': 'Email'}
     ))
-    mensagem = forms.CharField(label='Mensagem', widget=forms.Textarea(
-        attrs={'placeholder': 'Mensagem', 'rows': 5, 'cols': 30}
+    message = forms.CharField(label='Mensagem', widget=forms.Textarea(
+        attrs={'class': 'form-control', 'placeholder': 'Mensagem', 'rows': 5, 'cols': 30}
     ))
