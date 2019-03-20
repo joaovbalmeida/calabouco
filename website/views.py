@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.core.mail import send_mail
 from django.contrib import messages
 from django.conf import settings
+from django.views.generic.base import TemplateView
 from .models import Still, Client
 from .forms import ContactForm
 
@@ -41,3 +42,18 @@ class HomeView(View):
             messages.add_message(request, messages.INFO, e)
         context['form'] = form
         return TemplateResponse(request, 'home.html', context)
+
+class ProjectView(TemplateView):
+    template_name = "still.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(ProjectView, self).get_context_data(**kwargs)
+        context['still'] = Still.objects.get(pk=kwargs['id'])
+        stills = Still.objects.all()
+        for i, p in enumerate(stills):
+            if p.id == context['still'].id:
+                if i != 0:
+                    context['prev'] = stills[i-1]
+                if i != len(stills) - 1:
+                    context['next'] = stills[i + 1]
+        return context

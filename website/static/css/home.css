@@ -1,14 +1,14 @@
-@import url("https://fonts.googleapis.com/css?family=Arvo:700|Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Raleway|Montserrat");
 html {
   overflow-x: hidden;
 }
 
 body {
   color: #333;
-  background: #fff;
+  background: #FAFAFA;
   font-size: 16px;
   font-weight: 400;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Raleway;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -22,8 +22,9 @@ body {
 h1, h2, h3, h4 {
   font-size: 38px;
   color: #222222;
-  font-weight: 700;
-  font-family: Arvo, serif;
+  font-weight: 600;
+  font-family: Montserrat;
+  text-transform: uppercase;
 }
 
 a {
@@ -43,7 +44,7 @@ a a:focus {
 
 p {
   font-weight: 400;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Raleway;
   margin: 0px;
   font-size: 14px;
 }
@@ -170,7 +171,7 @@ button:focus {
 
 .navbar-expand-md .navbar-nav .nav-link {
   color: #333;
-  font-weight: 400;
+  font-weight: 500;
   padding: 7px 0;
   cursor: pointer;
   position: relative;
@@ -235,7 +236,7 @@ button:focus {
 }
 
 .section-padding {
-  padding: 60px 0;
+  padding: 100px 0px;
 }
 
 .section-header {
@@ -252,7 +253,7 @@ button:focus {
   font-size: 30px;
   color: #222222;
   display: inline-block;
-  font-weight: 700;
+  font-weight: 500;
   position: relative;
 }
 
@@ -265,7 +266,7 @@ button:focus {
 }
 
 .background-primary {
-  background-color: #ecdbcd;
+  background-color: #FAFAFA;
 }
 
 .primary-color {
@@ -314,7 +315,7 @@ a.back-to-top:hover, a.back-to-top:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ecdbcd;
+  background-color: #FAFAFA;
   z-index: 9999999;
 }
 
@@ -345,7 +346,7 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 
 #loader-1:after {
-  border: 7px solid #e1c7b1;
+  border: 7px solid #fff;
 }
 
 @keyframes spin {
@@ -361,49 +362,6 @@ a.back-to-top:hover, a.back-to-top:focus {
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}
-
-/* ==========================================================================
- Intro Area
-========================================================================== */
-
-#intro {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 650px;
-  position: relative;
-  overflow: hidden;
-  padding: 180px 0 80px;
-}
-
-#intro .contents .head-title {
-  color: #222222;
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 60px;
-  margin-bottom: 10px;
-}
-
-#intro .contents .header-button {
-  margin-top: 20px;
-  color: #222222;
-}
-
-#intro .contents .header-button .btn {
-  margin-right: 10px;
-}
-
-.intro {
-  background-color: #ecdbcd;
-}
-
-.sloder-img {
-  background: #34363a;
-}
-
-.spacex {
-  height: 600px;
 }
 
 /* ==========================================================================
@@ -424,7 +382,7 @@ Portfolio Area
   padding: 8px;
   box-shadow: 0 0 12px #f4f4f4;
   cursor: pointer;
-  background-color: #ecdbcd;
+  background-color: #f0f0f0;
   transition: all 0.3s ease-in-out 0s;
   -moz-transition: all 0.3s ease-in-out 0s;
   -webkit-transition: all 0.3s ease-in-out 0s;
@@ -444,7 +402,7 @@ Portfolio Area
 ========================================================================== */
 
 .blog {
-  background-color: #ecdbcd
+  background-color: #FAFAFA
 }
 
 /* ==========================================================================
@@ -490,7 +448,7 @@ textarea {
 .footer-area {
   position: relative;
   padding: 130px 0px 0px;
-  background: #fff;
+  background: #FAFAFA;
 }
 
 .footer-area .footer-title {
@@ -507,21 +465,13 @@ textarea {
 }
 
 .footer-area .textwidget p {
-  color: #333;
-}
-
-.footer-area .address li {
-  margin-bottom: 10px;
-}
-
-.footer-area .address li p {
   color: #666666;
   font-size: 14px;
   line-height: 30px;
   font-weight: 400;
 }
 
-.footer-area .address li p i {
+.footer-area .address-icon {
   font-size: 22px;
   width: 32px;
   vertical-align: middle;
@@ -555,7 +505,7 @@ textarea {
 
 .social-icon a {
   color: #272727;
-  background: #fff;
+  background: #FAFAFA;
   width: 32px;
   height: 32px;
   line-height: 34px;
@@ -571,7 +521,7 @@ textarea {
 }
 
 .social-icon a:hover {
-  color: #fff !important;
+  color: #FAFAFA !important;
 }
 
 .social-icon .vimeo:hover {
