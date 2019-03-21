@@ -236,11 +236,11 @@ button:focus {
 }
 
 .section-padding {
-  padding: 100px 0px;
+  padding: 60px 0px;
 }
 
 .section-header {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .section-header p {
@@ -276,6 +276,11 @@ button:focus {
 .toggler-colors {
   color: rgba(48, 104, 58, 0.6);
   border: 1px solid rgba(48, 104, 58, 0.6);
+}
+
+.section-line {
+  background-color: #d5d4e9;
+  height: 1px;
 }
 
 /* ScrollToTop */
@@ -378,11 +383,12 @@ Portfolio Area
   width: auto;
   height: 169px;
   border-radius: 4px;
+  outline-color: #000;
   overflow: hidden;
-  padding: 8px;
+  padding: 5px;
   box-shadow: 0 0 12px #f4f4f4;
   cursor: pointer;
-  background-color: #f0f0f0;
+  background-color: #fff;
   transition: all 0.3s ease-in-out 0s;
   -moz-transition: all 0.3s ease-in-out 0s;
   -webkit-transition: all 0.3s ease-in-out 0s;
@@ -402,7 +408,21 @@ Portfolio Area
 ========================================================================== */
 
 .blog {
-  background-color: #FAFAFA
+  background-color: #FAFAFA;
+  border-top: 1px solid #d5d4e9;
+}
+
+/* ==========================================================================
+ Client Area
+========================================================================== */
+
+#clients img {
+  height: 60px;
+}
+
+@media (min-width: 768px) {
+  #clients img {
+      height: 90px;
 }
 
 /* ==========================================================================
