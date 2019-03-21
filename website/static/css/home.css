@@ -257,6 +257,15 @@ button:focus {
   position: relative;
 }
 
+.section-title-2 {
+  font-size: 22px;
+  color: #222222;
+  display: inline-block;
+  font-weight: 500;
+  position: relative;
+  text-transform: none;
+}
+
 .shape {
   height: 1px;
   margin: 0 auto 30px;
