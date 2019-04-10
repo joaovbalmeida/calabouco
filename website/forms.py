@@ -11,5 +11,20 @@ class ContactForm(forms.Form):
         attrs={'class': 'form-control', 'placeholder': 'Email'}
     ))
     message = forms.CharField(label='Mensagem', widget=forms.Textarea(
-        attrs={'class': 'form-control', 'placeholder': 'Mensagem', 'rows': 5, 'cols': 30}
+        attrs={'class': 'form-control', 'rows': 12, 'cols': 30}
     ))
+
+    def __init__(self, *args, **kwargs):
+        super(ContactForm, self).__init__(*args, **kwargs)
+        self.fields['message'].initial = '''Olá, 
+(responda esse breve briefing e nos ajude a acelerar o seu orçamento)
+
+Sobre o que é o seu projeto?
+Qual o seu objetivo com esse filme, o que você pretende alcançar?
+Onde o vídeo será exibido?
+Qual o prazo para a entrega do filme?
+Você tem algum planejamento prévio de filmagem?
+Haverá captação de som? E trilha sonora original?
+
+Aguardo o contato,
+(assinado)'''
