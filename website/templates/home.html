@@ -2,23 +2,6 @@
 {% block content %}
     {% load static %}
     {% get_media_prefix as media_prefix %}
-    <header id="header-wrap">
-        <nav id="top" class="navbar navbar-expand-md background-primary fixed-top scrolling-navbar">
-            <div class="container">
-                <a href="#intro" class="navbar-brand"><img src="{% static 'img/calabouco_logo.png' %}" alt=""></a>       
-                <button class="navbar-toggler toggler-colors" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars toggler-icon"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
-                        {% if stills %}<li class="nav-item"><a class="nav-link" href="#portfolio">Trabalhos</a></li>{% endif %}
-                        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
-                    </ul>
-                </div>
-            </div>
-            </nav>
-    </header>
     
     <!-- Portfolio Section Start -->
     {% if stills %}
@@ -28,7 +11,9 @@
                     {% for s in stills %}
                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-3 wow fadeInUp" data-wow-delay="0.3s">
                             <div class="portfolio-item">
-                                <img class="img-fluid thumbnail" src="{{ s.thumbnail }}" alt="{{ s.name }}">
+                                <a class="projects-content_item_overlay-icon" href="{% url 'still' s.id %}">
+                                    <img class="img-fluid thumbnail" src="{{ s.thumbnail }}" alt="{{ s.name }}">
+                                </a>
                             </div>
                         </div>
                     {% endfor %}

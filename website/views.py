@@ -48,7 +48,7 @@ class ProjectView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(ProjectView, self).get_context_data(**kwargs)
-        context['still'] = Still.objects.get(pk=kwargs['id'])
+        context['still'] = Still.objects.get(pk=kwargs['still_id'])
         stills = Still.objects.all()
         for i, p in enumerate(stills):
             if p.id == context['still'].id:

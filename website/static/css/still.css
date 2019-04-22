@@ -1,0 +1,17 @@
+.still-padding {
+  padding: 20px 0px;
+}
+
+.still-padding a {
+  color: #30683A;
+}
+
+.still-datasheet {
+  white-space: pre-wrap;
+}
+
+.still-video {
+  max-width: 100%;
+  height: auto;
+  min-height: 400px;
+}

@@ -11,8 +11,29 @@
         {% load static %}
         <link rel="stylesheet" href="{% static 'css/animate.css' %}">
         <link rel="stylesheet" href="{% static 'css/home.css' %}">
+        <link rel="stylesheet" href="{% static 'css/still.css' %}">
+        <link rel="shortcut icon" href="{% static 'favicon/favicon.png' %}"/>
     </head>     
     <body>
+        <header id="header-wrap">
+            <nav id="top" class="navbar navbar-expand-md background-primary fixed-top scrolling-navbar">
+                <div class="container">
+                    {% block header %}
+                        <a href="#intro" class="navbar-brand"><img src="{% static 'img/calabouco_logo.png' %}" alt=""></a>
+                        <button class="navbar-toggler toggler-colors" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-bars toggler-icon"></i>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                            <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
+                                {% if stills %}<li class="nav-item"><a class="nav-link" href="#portfolio">Trabalhos</a></li>{% endif %}
+                                <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+                            </ul>
+                        </div>
+                    {% endblock %}
+                </div>
+            </nav>
+        </header>
         
         {% block content %}{% endblock %}
 

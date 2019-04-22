@@ -236,7 +236,7 @@ button:focus {
 }
 
 .section-padding {
-  padding: 60px 0px;
+  padding: 80px 0px;
 }
 
 .section-header {
@@ -381,7 +381,6 @@ Portfolio Area
   display: flex;
   justify-content: center;
   width: auto;
-  height: 169px;
   border-radius: 2px;
   outline-color: #fafafa;
   overflow: hidden;
