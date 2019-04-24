@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-_#91@#c-ko3t*=#ap6rsh7ei0)^$+jtorcc%s=rgao!9_n23y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.calaboucofilmes.com']
 
 
 # Application definition
