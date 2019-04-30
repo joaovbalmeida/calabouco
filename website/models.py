@@ -4,7 +4,6 @@ from django.db import models
 class Still(models.Model):
     name = models.CharField("Nome", max_length=255)
     link = models.CharField("Link do Vídeo", max_length=255, null=True, blank=True)
-    thumbnail = models.CharField("Link da Thumbnail", max_length=255, null=True, blank=True)
     description = models.TextField("Descrição", null=True, blank=True)
     datasheet = models.TextField("Ficha Técnica", null=True, blank=True)
     created_at = models.DateTimeField("Criado em", auto_now=False, auto_now_add=True)
