@@ -25,7 +25,7 @@ SECRET_KEY = '-_#91@#c-ko3t*=#ap6rsh7ei0)^$+jtorcc%s=rgao!9_n23y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.calaboucofilmes.com']
+ALLOWED_HOSTS = ['www.calaboucofilmes.com', 'calaboucofilmes.com']
 
 
 # Application definition
